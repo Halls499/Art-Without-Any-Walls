@@ -1,21 +1,25 @@
-React + TypeScript + Vite
+# React + TypeScript + Vite
+
 Este modelo (template) fornece uma configuração mínima para fazer o React funcionar no Vite com HMR (Hot Module Replacement) e algumas regras do ESLint.
 
 Atualmente, dois plugins oficiais estão disponíveis:
 
-@vitejs/plugin-react utiliza Oxc
+* [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) utiliza [Oxc](https://oxc.rs)
+* [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) utiliza [SWC](https://swc.rs/)
 
-@vitejs/plugin-react-swc utiliza SWC
+## React Compiler
 
-React Compiler
-O React Compiler está habilitado neste modelo. Consulte esta documentação para mais informações.
+O React Compiler está habilitado neste modelo. Consulte [esta documentação](https://react.dev/learn/react-compiler) para mais informações.
 
-Nota: Isso impactará o desempenho do Vite durante o desenvolvimento (dev) e a compilação (build).
+> **Nota:** Isso impactará o desempenho do Vite durante o desenvolvimento (dev) e a compilação (build).
 
-Expandindo a configuração do ESLint
+---
+
+## Expandindo a configuração do ESLint
+
 Se você estiver desenvolvendo uma aplicação para produção, recomendamos atualizar a configuração para habilitar regras de lint com reconhecimento de tipos:
 
-JavaScript
+```js
 export default defineConfig([
   globalIgnores(['dist']),
   {
@@ -41,9 +45,12 @@ export default defineConfig([
     },
   },
 ])
-Você também pode instalar eslint-plugin-react-x e eslint-plugin-react-dom para regras de lint específicas do React:
 
-JavaScript
+
+```
+## Você também pode instalar o eslint-plugin-react-x e o eslint-plugin-react-dom para regras de lint específicas do React:
+
+```js
 // eslint.config.js
 import reactX from 'eslint-plugin-react-x'
 import reactDom from 'eslint-plugin-react-dom'
