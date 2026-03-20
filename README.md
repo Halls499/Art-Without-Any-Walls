@@ -12,9 +12,9 @@ Atualmente, dois plugins oficiais estão disponíveis:
 O React Compiler está habilitado neste modelo. Consulte [esta documentação](https://react.dev/learn/react-compiler) para mais informações.
 
 > **Nota:** Isso impactará o desempenho do Vite durante o desenvolvimento (dev) e a compilação (build).
-
----
 <img src="https://i.imgur.com/KOo7pZH.jpeg"/>
+---
+
 ## Expandindo a configuração do ESLint
 
 Se você estiver desenvolvendo uma aplicação para produção, recomendamos atualizar a configuração para habilitar regras de lint com reconhecimento de tipos:
