@@ -1,23 +1,21 @@
-# React + TypeScript + Vite
+React + TypeScript + Vite
+Este modelo (template) fornece uma configuração mínima para fazer o React funcionar no Vite com HMR (Hot Module Replacement) e algumas regras do ESLint.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Atualmente, dois plugins oficiais estão disponíveis:
 
-Currently, two official plugins are available:
+@vitejs/plugin-react utiliza Oxc
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+@vitejs/plugin-react-swc utiliza SWC
 
-## React Compiler
+React Compiler
+O React Compiler está habilitado neste modelo. Consulte esta documentação para mais informações.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Nota: Isso impactará o desempenho do Vite durante o desenvolvimento (dev) e a compilação (build).
 
-Note: This will impact Vite dev & build performances.
+Expandindo a configuração do ESLint
+Se você estiver desenvolvendo uma aplicação para produção, recomendamos atualizar a configuração para habilitar regras de lint com reconhecimento de tipos:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
+JavaScript
 export default defineConfig([
   globalIgnores(['dist']),
   {
@@ -43,11 +41,9 @@ export default defineConfig([
     },
   },
 ])
-```
+Você também pode instalar eslint-plugin-react-x e eslint-plugin-react-dom para regras de lint específicas do React:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
+JavaScript
 // eslint.config.js
 import reactX from 'eslint-plugin-react-x'
 import reactDom from 'eslint-plugin-react-dom'
@@ -72,4 +68,3 @@ export default defineConfig([
     },
   },
 ])
-```
