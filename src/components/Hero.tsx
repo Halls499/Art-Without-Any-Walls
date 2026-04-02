@@ -9,18 +9,19 @@ function Hero() {
           {/* Left Content */}
           <div className="space-y-8">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight">
-              YOUR ART,{" "}
+              SUA ARTE,{" "}
               <span className="relative inline-block">
-                <span className="relative z-10">NO WALLS.</span>
+                <span className="relative z-10">SEM PAREDES.</span>
                 <span className="absolute inset-0 bg-emerald-300 -rotate-1 rounded-lg -z-0"></span>
               </span>
               <br />
-              WHERE TALENT FINDS OPPORTUNITY.
+              ONDE SUA PAIXÃO ENCONTRA OPORTUNIDADES
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              A modern platform connecting diverse creators with businesses,
-              government partners, and education initiatives.
+              A arte além de limites e padrões   <br />
+            Um espaço para criar, expressar e existir   <br />
+            Vivendo do que se sente
             </p>
 
             {/* CTA Buttons */}
@@ -29,13 +30,13 @@ function Hero() {
                 to="/signup?type=artist"
                 className="px-10 py-4 bg-emerald-300 text-purple-900 font-bold rounded-full hover:bg-emerald-400 hover:shadow-xl hover:scale-105 transition-all duration-300 border-2 border-purple-900 text-center"
               >
-                I'M AN ARTIST
+                SOU ARTISTA
               </Link>
               <Link 
                 to="/signup?type=company"
                 className="px-10 py-4 bg-white text-purple-900 font-bold rounded-full hover:bg-purple-50 hover:shadow-xl hover:scale-105 transition-all duration-300 border-2 border-purple-900 text-center"
               >
-                I'M A COMPANY
+                SOU UMA EMPRESA
               </Link>
             </div>
           </div>
@@ -51,19 +52,19 @@ function Hero() {
               <div className="grid grid-cols-2 gap-6 relative z-10">
                 <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                   <Sparkles className="w-16 h-16 text-purple-600 mb-4" strokeWidth={2} />
-                  <p className="font-bold text-gray-800">Creative Arts</p>
+                  <p className="font-bold text-gray-800">Artes Criativas</p>
                 </div>
                 <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow mt-8">
                   <Music className="w-16 h-16 text-emerald-600 mb-4" strokeWidth={2} />
-                  <p className="font-bold text-gray-800">Music</p>
+                  <p className="font-bold text-gray-800">Musica</p>
                 </div>
                 <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow -mt-4">
                   <Camera className="w-16 h-16 text-amber-600 mb-4" strokeWidth={2} />
-                  <p className="font-bold text-gray-800">Photography</p>
+                  <p className="font-bold text-gray-800">Fotografia</p>
                 </div>
                 <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow mt-4">
                   <Users className="w-16 h-16 text-purple-600 mb-4" strokeWidth={2} />
-                  <p className="font-bold text-gray-800">Community</p>
+                  <p className="font-bold text-gray-800">Comunidade</p>
                 </div>
               </div>
             </div>

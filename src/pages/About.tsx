@@ -1,22 +1,41 @@
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import fotoRafinha from '../img/rafinha.jpg'
 
 export default function About() {
   const team = [
     {
-      name: "Maria Santos",
-      role: "Fundadora & CEO",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300",
+      name: "Rafael D`Angelo",
+      role: "Fundador & CEO",
+      image: fotoRafinha,
       bio: "15 anos de experiência em gestão cultural"
     },
     {
-      name: "João Oliveira",
+      name: "Raul Mazzone",
       role: "Diretor de Tecnologia",
       image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300",
       bio: "Especialista em plataformas digitais"
     },
     {
-      name: "Lucia Ferreira",
+      name: "Cauan Bastos",
+      role: "Diretora Artística",
+      image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=300",
+      bio: "Curadora com projetos internacionais"
+    },
+        {
+      name: "Wenvel Kaique Campo Gomes",
+      role: "Diretora Artística",
+      image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=300",
+      bio: "Curadora com projetos internacionais"
+    },
+        {
+      name: "Danilo Gaspar",
+      role: "Diretora Artística",
+      image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=300",
+      bio: "Curadora com projetos internacionais"
+    },
+        {
+      name: "Guilherme Figueira",
       role: "Diretora Artística",
       image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=300",
       bio: "Curadora com projetos internacionais"
@@ -92,8 +111,8 @@ export default function About() {
                   className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-purple-400 transition-all duration-300 hover:scale-105 group text-center"
                 >
                   <div className="h-64 overflow-hidden">
-                    <img
-                      src={member.image}
+             <img
+                      src={member.image} // CORREÇÃO AQUI: src={member.image}
                       alt={member.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />

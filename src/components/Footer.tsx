@@ -9,18 +9,18 @@ function Footer() {
           <div className="md:col-span-1">
             <h3 className="text-3xl font-black text-purple-400 mb-4">AWAW</h3>
             <p className="text-gray-400 leading-relaxed">
-              Connecting talent with opportunity. Breaking down walls in the creative industry.
+              Conectando talentos com oportunidades. Quebrando paredes da industria criativa.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-bold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-bold mb-4">Links Rápidos</h4>
             <ul className="space-y-3">
-              <li><a href="#artists" className="text-gray-400 hover:text-purple-400 transition-colors">Artists</a></li>
-              <li><a href="#companies" className="text-gray-400 hover:text-purple-400 transition-colors">Companies</a></li>
-              <li><a href="#social-projects" className="text-gray-400 hover:text-purple-400 transition-colors">Social Projects</a></li>
-              <li><a href="#about" className="text-gray-400 hover:text-purple-400 transition-colors">About</a></li>
+              <li><a href="#artists" className="text-gray-400 hover:text-purple-400 transition-colors">Artistas</a></li>
+              <li><a href="#companies" className="text-gray-400 hover:text-purple-400 transition-colors">Empresas</a></li>
+              <li><a href="#social-projects" className="text-gray-400 hover:text-purple-400 transition-colors">Projetos Sociais</a></li>
+              <li><a href="#about" className="text-gray-400 hover:text-purple-400 transition-colors">Sobre</a></li>
             </ul>
           </div>
 
@@ -29,15 +29,15 @@ function Footer() {
             <h4 className="text-lg font-bold mb-4">Resources</h4>
             <ul className="space-y-3">
               <li><a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Blog</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Success Stories</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Help Center</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Contact</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Histórias de sucesso</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Central  de Ajuda</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Contato</a></li>
             </ul>
           </div>
 
           {/* Social */}
           <div>
-            <h4 className="text-lg font-bold mb-4">Follow Us</h4>
+            <h4 className="text-lg font-bold mb-4">Siga-nos</h4>
             <div className="flex gap-4">
               <a href="#" className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
                 <Instagram className="w-5 h-5" />
@@ -58,11 +58,11 @@ function Footer() {
         {/* Bottom */}
         <div className="pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © 2024 AWAW. All rights reserved.
+            © 2026 AWAW. Todos os Direitos Reservados.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Privacy Policy</a>
-            <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Terms of Service</a>
+            <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Politicas de Privacidade</a>
+            <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Termos e Serviço</a>
           </div>
         </div>
       </div>

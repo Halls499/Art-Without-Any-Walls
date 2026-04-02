@@ -10,11 +10,11 @@ function Features() {
             <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
               <Star className="w-8 h-8 text-white" fill="white" strokeWidth={2} />
             </div>
-            <h3 className="text-2xl font-black text-white mb-4">FOR ARTISTS:</h3>
+            <h3 className="text-2xl font-black text-white mb-4">PARA ARTISTAS::</h3>
             <p className="text-purple-100 text-lg leading-relaxed">
-              Build your portfolio.
+              Monte seu portfólio.
               <br />
-              Be seen by the world.
+              Seja visto pelo mundo.
             </p>
           </div>
 
@@ -23,11 +23,11 @@ function Features() {
             <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
               <Handshake className="w-8 h-8 text-gray-800" strokeWidth={2} />
             </div>
-            <h3 className="text-2xl font-black text-gray-800 mb-4">FOR BUSINESSES:</h3>
+            <h3 className="text-2xl font-black text-gray-800 mb-4">PARA NEGÓCIOS:</h3>
             <p className="text-gray-800 text-lg leading-relaxed">
-              Find unique talent.
+              Encontre talentos unicos.
               <br />
-              Elevate your brand.
+              Eleve sua marca.
             </p>
           </div>
 
@@ -36,11 +36,11 @@ function Features() {
             <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
               <GraduationCap className="w-8 h-8 text-purple-600" strokeWidth={2} />
             </div>
-            <h3 className="text-2xl font-black text-purple-900 mb-4">FOR COMMUNITIES:</h3>
+            <h3 className="text-2xl font-black text-purple-900 mb-4">PARA COMUNIDADES:</h3>
             <p className="text-gray-700 text-lg leading-relaxed">
-              Access social projects
+              Acesse projetos sociais
               <br />
-              and education.
+              Ou crie o seu.
             </p>
           </div>
         </div>

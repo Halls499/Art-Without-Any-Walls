@@ -44,16 +44,16 @@ function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/artists" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
-              Artists
+              Artistas
             </Link>
             <Link to="/companies" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
-              Companies
+              Empresas
             </Link>
             <Link to="/social-projects" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
-              Social Projects
+              Projetos Sociais
             </Link>
             <Link to="/about" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
-              About
+              Sobre Nós
             </Link>
           </div>
 
@@ -63,7 +63,7 @@ function Navbar() {
               to={isAuthenticated ? "/dashboard" : "/signup?type=artist"}
               className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 hover:shadow-lg hover:scale-105 transition-all duration-300 inline-block"
             >
-              {isAuthenticated ? "DASHBOARD" : "START NOW"}
+              {isAuthenticated ? "DASHBOARD" : "COMECE AGORA"}
             </Link>
           </div>
 
@@ -85,16 +85,16 @@ function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100">
           <div className="px-4 py-6 space-y-4">
-            <Link to="/artists" className="block text-gray-700 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Artists</Link>
-            <Link to="/companies" className="block text-gray-700 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Companies</Link>
-            <Link to="/social-projects" className="block text-gray-700 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Social Projects</Link>
-            <Link to="/about" className="block text-gray-700 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>About</Link>
+            <Link to="/artists" className="block text-gray-700 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Artistas</Link>
+            <Link to="/companies" className="block text-gray-700 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Empresas</Link>
+            <Link to="/social-projects" className="block text-gray-700 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Projetos Sociais</Link>
+            <Link to="/about" className="block text-gray-700 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Sobre Nós</Link>
             <Link 
               to={isAuthenticated ? "/dashboard" : "/signup?type=artist"}
               className="block w-full px-8 py-3 bg-purple-600 text-white font-semibold rounded-full text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {isAuthenticated ? "DASHBOARD" : "START NOW"}
+              {isAuthenticated ? "DASHBOARD" : "COMECE AGORA"}
             </Link>
           </div>
         </div>
