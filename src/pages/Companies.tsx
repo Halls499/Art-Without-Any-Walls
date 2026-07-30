@@ -78,9 +78,7 @@ export default function Companies() {
                     </div>
                     <p className="text-gray-300 mb-4">{company.description}</p>
                     <p className="text-sm text-amber-400 mb-6">{company.projects}</p>
-                    <button className="w-full py-3 px-6 bg-gradient-to-r from-amber-400 to-orange-400 text-slate-900 font-semibold rounded-xl hover:shadow-lg hover:shadow-amber-400/50 transition-all duration-300">
-                      Ver Oportunidades
-                    </button>
+                   
                   </div>
                 </div>
               </div>
@@ -118,14 +116,7 @@ export default function Companies() {
           </div>
 
           {/* CTA */}
-          <div className="text-center">
-            <Link
-              to="/signup?type=company"
-              className="inline-block px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold text-lg rounded-xl hover:shadow-lg hover:shadow-amber-500/50 transition-all duration-300"
-            >
-              Cadastrar Minha Empresa
-            </Link>
-          </div>
+          
         </div>
       </main>
 
