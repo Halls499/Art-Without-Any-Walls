@@ -1,175 +1,224 @@
 import { Link } from "react-router-dom"
+import { Award, MapPin, ExternalLink, HeartHandshake, Palette, Sparkles } from "lucide-react"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 
+interface SocialProject {
+  id: number
+  title: string
+  founder: string
+  category: string
+  image: string
+  description: string
+  impact: string
+  location: string
+  externalUrl: string
+}
+
 export default function SocialProjects() {
-  const projects = [
+  const projects: SocialProject[] = [
     {
       id: 1,
-      title: "Arte nas Comunidades",
-      category: "Educação",
-      image: "https://images.pexels.com/photos/8612992/pexels-photo-8612992.jpeg?auto=compress&cs=tinysrgb&w=600",
-      description: "Oficinas de arte gratuitas para crianças e adolescentes em comunidades vulneráveis",
-      impact: "500+ jovens atendidos",
-      location: "São Paulo, SP"
+      title: "Favela Galeria",
+      founder: "Criado pelo Coletivo OPNI",
+      category: "Arte Urbana & Grafite",
+      image: "/projects/favelagaleria.jpg",
+      description: "Galeria de arte a céu aberto na Vila Flávia que transforma a periferia através do grafite, oficinas e acolhimento comunitário.",
+      impact: "Centenas de murais e formação local",
+      location: "São Mateus, São Paulo - SP",
+      externalUrl: "https://www.instagram.com/favelagaleria/"
     },
     {
       id: 2,
-      title: "Murais pela Inclusão",
-      category: "Arte Urbana",
-      image: "https://images.pexels.com/photos/1839919/pexels-photo-1839919.jpeg?auto=compress&cs=tinysrgb&w=600",
-      description: "Transformação de espaços públicos através de murais com mensagens de inclusão",
-      impact: "25 murais criados",
-      location: "Rio de Janeiro, RJ"
+      title: "Projeto Axé",
+      founder: "Fundado por Cesare de Florio La Rocca",
+      category: "Arte-Educação",
+      image: "/projects/projetoaxe.jpg",
+      description: "Referência nacional e internacional em defesa de direitos e transformação de crianças e jovens em vulnerabilidade através da arte e música.",
+      impact: "+30.000 jovens acolhidos",
+      location: "Pelourinho, Salvador - BA",
+      externalUrl: "http://www.projetoaxe.org/"
     },
     {
       id: 3,
-      title: "Cultura Acessível",
-      category: "Inclusão",
-      image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=600",
-      description: "Exposições e eventos culturais adaptados para pessoas com deficiência",
-      impact: "15 eventos realizados",
-      location: "Belo Horizonte, MG"
+      title: "Spectaculu - Escola de Arte e Tecnologia",
+      founder: "Fundada por Gringo Cardia e Marisa Orth",
+      category: "Capacitação Técnica e Cênica",
+      image: "/projects/spetaculu.jpg",
+      description: "Formação profissional em técnicas de espetáculo, cenografia, iluminação, figurino e novas mídias para jovens da rede pública.",
+      impact: "+2.000 técnicos formados",
+      location: "Cais do Porto, Rio de Janeiro - RJ",
+      externalUrl: "https://spectaculu.org.br/"
     },
     {
       id: 4,
-      title: "Memória Visual",
-      category: "Preservação",
-      image: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600",
-      description: "Documentação fotográfica e artística de comunidades tradicionais",
-      impact: "10 comunidades documentadas",
-      location: "Nacional"
+      title: "Instituto Criar de TV, Cinema e Mídias",
+      founder: "Fundado por Luciano Huck",
+      category: "Audiovisual & Novas Mídias",
+      image: "/projects/instituto.jpg",
+      description: "Promove o desenvolvimento profissional, sociocultural e pessoal de jovens por meio do ensino técnico e prático de cinema e audiovisual.",
+      impact: "+2.500 jovens inseridos no mercado",
+      location: "Bom Retiro, São Paulo - SP",
+      externalUrl: "https://www.institutocriar.org/"
     },
     {
       id: 5,
-      title: "Arte e Saúde Mental",
-      category: "Saúde",
-      image: "https://images.pexels.com/photos/3760607/pexels-photo-3760607.jpeg?auto=compress&cs=tinysrgb&w=600",
-      description: "Terapia através da arte para pessoas em tratamento de saúde mental",
-      impact: "200+ participantes",
-      location: "Curitiba, PR"
+      title: "Rede Daora - Estúdios Criativos",
+      founder: "Iniciativa SMC SP",
+      category: "Economia Criativa",
+      image: "/projects/rededaora.jpg",
+      description: "Polos públicos com estúdios profissionais que oferecem cursos gratuitos de produção musical, DJ, games, fotografia e programação web.",
+      impact: "Polos nas 4 zonas periféricas",
+      location: "São Paulo, SP",
+      externalUrl: "https://portadeentrada.prefeitura.sp.gov.br/rede-daora/"
     },
     {
       id: 6,
-      title: "Empreendedorismo Criativo",
-      category: "Economia",
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600",
-      description: "Capacitação de artistas para transformar talento em renda sustentável",
-      impact: "150 artistas capacitados",
-      location: "Porto Alegre, RS"
+      title: "PIÁ (Programa de Iniciação Artística)",
+      founder: "Rede Pública Cultural de SP",
+      category: "Iniciação Infantil & Cidadania",
+      image: "/projects/pia.jpg",
+      description: "Artistas-educadores promovem encontros semanais em linguagens de artes visuais, dança, circo e literatura para crianças e adolescentes.",
+      impact: "Atuação em mais de 100 polos",
+      location: "Centros Culturais e CEUs, SP",
+      externalUrl: "https://portadeentrada.prefeitura.sp.gov.br/pia/"
     }
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900">
+    <div className="min-h-screen bg-white text-neutral-900 flex flex-col">
       <Navbar />
       
-      <main className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <main className="flex-1 pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Projetos <span className="text-emerald-400">Sociais</span>
+          {/* Header no estilo da Home */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-neutral-900 mb-4">
+              PROJETOS <span className="text-purple-600">SOCIAIS.</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Arte como ferramenta de transformação social e desenvolvimento comunitário
-            </p>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-emerald-400/30 text-center">
-              <div className="text-4xl font-bold text-emerald-400 mb-2">1000+</div>
-              <div className="text-gray-300">Vidas Impactadas</div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-purple-400/30 text-center">
-              <div className="text-4xl font-bold text-purple-400 mb-2">50+</div>
-              <div className="text-gray-300">Projetos Ativos</div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-amber-400/30 text-center">
-              <div className="text-4xl font-bold text-amber-400 mb-2">200+</div>
-              <div className="text-gray-300">Artistas Voluntários</div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-pink-400/30 text-center">
-              <div className="text-4xl font-bold text-pink-400 mb-2">15</div>
-              <div className="text-gray-300">Cidades Atendidas</div>
-            </div>
           </div>
 
           {/* Grid de Projetos */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {projects.map((project) => (
               <div
                 key={project.id}
-                className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-emerald-400 transition-all duration-300 hover:scale-105 group"
+                className="group bg-white rounded-3xl border border-neutral-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-purple-300 transition-all duration-300 flex flex-col"
               >
-                <div className="h-48 overflow-hidden">
+                {/* Imagem / Logo */}
+                <div className="h-48 w-full bg-neutral-50 border-b border-neutral-100 flex items-center justify-center p-6 relative">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://images.pexels.com/photos/1647121/pexels-photo-1647121.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    }}
                   />
+                  <span className="absolute bottom-3 left-4 px-2.5 py-1 bg-white/90 backdrop-blur-sm border border-neutral-200 text-purple-700 font-semibold text-[11px] rounded-full shadow-sm">
+                    {project.category}
+                  </span>
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="px-3 py-1 bg-emerald-500/30 text-emerald-300 rounded-full text-sm">
-                      {project.category}
-                    </span>
-                    <span className="text-sm text-gray-400">📍 {project.location}</span>
+
+                {/* Conteúdo */}
+                <div className="p-6 flex flex-col justify-between flex-1">
+                  <div>
+                    <div className="flex items-center gap-1 text-xs text-neutral-400 font-medium mb-2">
+                      <MapPin className="w-3.5 h-3.5 text-purple-600 shrink-0" />
+                      <span className="truncate">{project.location}</span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-neutral-900 mb-1 line-clamp-1" title={project.title}>
+                      {project.title}
+                    </h3>
+                    <p className="text-xs font-semibold text-purple-600 mb-3 line-clamp-1">
+                      {project.founder}
+                    </p>
+                    
+                    <p className="text-neutral-600 text-sm leading-relaxed mb-4 line-clamp-3">
+                      {project.description}
+                    </p>
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
-                  <p className="text-gray-300 mb-4">{project.description}</p>
-                  <p className="text-emerald-400 font-semibold mb-4">✨ {project.impact}</p>
-                  <button className="w-full py-3 px-6 bg-gradient-to-r from-emerald-400 to-cyan-400 text-slate-900 font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-400/50 transition-all duration-300">
-                    Saiba Mais
-                  </button>
+
+                  <div>
+                    <div className="flex items-center gap-2 text-xs font-semibold text-neutral-700 bg-neutral-50 border border-neutral-200 p-2.5 rounded-xl mb-4">
+                      <Award className="w-4 h-4 text-purple-600 shrink-0" />
+                      <span className="truncate">{project.impact}</span>
+                    </div>
+
+                    <a
+                      href={project.externalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2.5 px-4 bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 font-semibold text-xs rounded-full flex items-center justify-center gap-1.5 transition-colors"
+                    >
+                      Conhecer Projeto Oficial
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Como Participar */}
-          <div className="bg-gradient-to-r from-purple-900/50 to-emerald-900/50 rounded-3xl p-8 md:p-12 border border-emerald-500/30">
-            <h2 className="text-4xl font-bold text-white mb-8 text-center">
-              Como Você Pode Participar
+          {/* Seção Como Participar */}
+          <div className="bg-neutral-50 border border-neutral-200 rounded-3xl p-8 sm:p-12 mb-16">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 text-center mb-8">
+              Como Você Pode Fazer Parte?
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-4xl">🎨</span>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white p-6 rounded-2xl border border-neutral-200/80 shadow-sm text-center">
+                <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Palette className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">Seja Voluntário</h3>
-                <p className="text-gray-300 mb-4">Compartilhe seu talento e ensine arte para comunidades</p>
-                <Link
-                  to="/signup?type=volunteer"
-                  className="inline-block px-6 py-2 bg-emerald-400 text-slate-900 font-semibold rounded-lg hover:bg-emerald-300 transition-colors"
-                >
-                  Quero Ser Voluntário
-                </Link>
+                <h3 className="text-lg font-bold text-neutral-900 mb-1">Seja Voluntário</h3>
+                <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed">
+                  Ministre oficinas, compartilhe técnicas artísticas e ajude na formação de novos criadores.
+                </p>
               </div>
-              <div className="text-center">
-                <div className="w-20 h-20 bg-purple-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-4xl">💰</span>
+
+              <div className="bg-white p-6 rounded-2xl border border-neutral-200/80 shadow-sm text-center">
+                <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <HeartHandshake className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">Doe</h3>
-                <p className="text-gray-300 mb-4">Contribua financeiramente para manter os projetos ativos</p>
-                <button className="inline-block px-6 py-2 bg-purple-400 text-slate-900 font-semibold rounded-lg hover:bg-purple-300 transition-colors">
-                  Fazer Doação
-                </button>
+                <h3 className="text-lg font-bold text-neutral-900 mb-1">Cadastre sua Ação</h3>
+                <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed">
+                  Divulgue seu coletivo ou projeto cultural na AWAW para receber visibilidade e apoio.
+                </p>
               </div>
-              <div className="text-center">
-                <div className="w-20 h-20 bg-amber-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-4xl">🤝</span>
+
+              <div className="bg-white p-6 rounded-2xl border border-neutral-200/80 shadow-sm text-center">
+                <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Sparkles className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">Parceria</h3>
-                <p className="text-gray-300 mb-4">Sua empresa pode patrocinar ou apoiar um projeto</p>
-                <Link
-                  to="/signup?type=partner"
-                  className="inline-block px-6 py-2 bg-amber-400 text-slate-900 font-semibold rounded-lg hover:bg-amber-300 transition-colors"
-                >
-                  Seja Parceiro
-                </Link>
+                <h3 className="text-lg font-bold text-neutral-900 mb-1">Apoio e Parceria</h3>
+                <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed">
+                  Conecte empresas e investidores diretamente com as necessidades materiais das oficinas.
+                </p>
               </div>
+            </div>
+          </div>
+
+          {/* CTA no padrão da Home */}
+          <div className="text-center max-w-xl mx-auto">
+            <h3 className="text-2xl font-black text-neutral-900 mb-2">Coordena uma iniciativa cultural?</h3>
+            <p className="text-neutral-600 text-sm mb-6">
+              Cadastre seu projeto social na plataforma e amplie o alcance das suas oficinas e murais.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link
+                to="/signup?type=social"
+                className="px-6 py-3 bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-semibold text-sm rounded-full shadow-md hover:shadow-lg transition-all"
+              >
+                Cadastrar Projeto Social
+              </Link>
+              <Link
+                to="/signup?type=volunteer"
+                className="px-6 py-3 bg-white border border-neutral-300 text-neutral-700 hover:border-purple-600 hover:text-purple-600 font-semibold text-sm rounded-full transition-all"
+              >
+                Quero ser Voluntário
+              </Link>
             </div>
           </div>
         </div>
