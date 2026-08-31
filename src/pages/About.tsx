@@ -1,173 +1,170 @@
+import { Link } from "react-router-dom"
+import { Target, Eye, Gem, Users, Sparkles, Building2, HeartHandshake } from "lucide-react"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
-import fotoRafinha from '../img/rafinha.jpg'
+import fotoRafinha from "../img/rafinha.jpg"
+
+interface TeamMember {
+  name: string
+  role: string
+  image: string
+  bio: string
+}
 
 export default function About() {
-  const team = [
+  const team: TeamMember[] = [
     {
-      name: "Rafael D`Angelo",
-      role: "Fundador & CEO",
+      name: "Rafael D'Angelo",
+      role: "Fundador & Gestão de Projetos",
       image: fotoRafinha,
-      bio: "15 anos de experiência em gestão cultural"
+      bio: "Planejamento estratégico e articulação do ecossistema institucional da AWAW."
     },
     {
       name: "Raul Mazzone",
-      role: "Diretor de Tecnologia",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300",
-      bio: "Especialista em plataformas digitais"
+      role: "Diretoria de Tecnologia & Backend",
+      image: "/projects/raul.jpeg",
+      bio: "Arquitetura técnica, segurança de dados e infraestrutura de sistemas."
+    },
+    {
+      name: "Wenvel Kaique Campos Gomes",
+      role: "Engenharia de Software & Frontend",
+      image: "/projects/wenvel.jpeg",
+      bio: "Desenvolvimento da interface web, componentização React e experiência do usuário."
     },
     {
       name: "Cauan Bastos",
-      role: "Diretora Artística",
-      image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=300",
-      bio: "Curadora com projetos internacionais"
+      role: "Curadoria Visual & Design de Produto",
+      image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=600",
+      bio: "Diretrizes de identidade visual, acessibilidade e curadoria artística."
     },
-        {
-      name: "Wenvel Kaique Campo Gomes",
-      role: "Diretora Artística",
-      image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=300",
-      bio: "Curadora com projetos internacionais"
-    },
-        {
+    {
       name: "Danilo Gaspar",
-      role: "Diretora Artística",
-      image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=300",
-      bio: "Curadora com projetos internacionais"
+      role: "Relações Institucionais & Parcerias",
+      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
+      bio: "Captação de organizações, galerias e integração de projetos sociais."
     },
-        {
+    {
       name: "Guilherme Figueira",
-      role: "Diretora Artística",
-      image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=300",
-      bio: "Curadora com projetos internacionais"
+      role: "Qualidade, Testes & Documentação",
+      image: "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=600",
+      bio: "Garantia de conformidade, validação de fluxos e documentação do projeto."
     }
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-white text-neutral-900 flex flex-col">
       <Navbar />
-      
-      <main className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+
+      <main className="flex-1 pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Hero Section */}
-          <div className="text-center mb-20">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              Sobre <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Nós</span>
+          {/* Header no estilo da Home */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-neutral-900 mb-4">
+              ARTE SEM <span className="text-purple-600">FRONTEIRAS.</span>
             </h1>
-            <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Conectando arte, cultura e oportunidades para criar um ecossistema criativo vibrante e sustentável
+            <p className="text-base sm:text-lg text-neutral-600 leading-relaxed">
+              A <strong>AWAW (Art Without Any Walls)</strong> é uma plataforma dedicada a derrubar barreiras entre criadores independentes, empresas e iniciativas de impacto social.
             </p>
           </div>
 
-          {/* Missão, Visão, Valores */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-            <div className="bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-3xl p-8 border border-emerald-400/30">
-              <div className="text-5xl mb-4">🎯</div>
-              <h2 className="text-3xl font-bold text-white mb-4">Nossa Missão</h2>
-              <p className="text-gray-300 text-lg">
-                Democratizar o acesso à arte e criar pontes entre artistas talentosos e oportunidades reais de crescimento profissional.
+          {/* Missão, Visão e Valores */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+            <div className="bg-neutral-50 border border-neutral-200 rounded-3xl p-8 shadow-sm hover:border-purple-300 transition-all duration-300">
+              <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                <Target className="w-6 h-6" />
+              </div>
+              <h2 className="text-xl font-bold text-neutral-900 mb-3">Nossa Missão</h2>
+              <p className="text-neutral-600 text-sm leading-relaxed">
+                Democratizar a visibilidade da produção artística e viabilizar conexões profissionais diretas, justas e descentralizadas.
               </p>
             </div>
-            <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-3xl p-8 border border-purple-400/30">
-              <div className="text-5xl mb-4">👁️</div>
-              <h2 className="text-3xl font-bold text-white mb-4">Nossa Visão</h2>
-              <p className="text-gray-300 text-lg">
-                Ser a maior rede de conexão entre artistas e empresas da América Latina, transformando vidas através da arte.
+
+            <div className="bg-neutral-50 border border-neutral-200 rounded-3xl p-8 shadow-sm hover:border-purple-300 transition-all duration-300">
+              <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                <Eye className="w-6 h-6" />
+              </div>
+              <h2 className="text-xl font-bold text-neutral-900 mb-3">Nossa Visão</h2>
+              <p className="text-neutral-600 text-sm leading-relaxed">
+                Consolidar-se como o ecossistema de referência na união entre cultura independente, economia criativa e formação comunitária.
               </p>
             </div>
-            <div className="bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-3xl p-8 border border-amber-400/30">
-              <div className="text-5xl mb-4">💎</div>
-              <h2 className="text-3xl font-bold text-white mb-4">Nossos Valores</h2>
-              <p className="text-gray-300 text-lg">
-                Criatividade, inclusão, transparência, sustentabilidade e compromisso com a excelência artística.
+
+            <div className="bg-neutral-50 border border-neutral-200 rounded-3xl p-8 shadow-sm hover:border-purple-300 transition-all duration-300">
+              <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                <Gem className="w-6 h-6" />
+              </div>
+              <h2 className="text-xl font-bold text-neutral-900 mb-3">Nossos Valores</h2>
+              <p className="text-neutral-600 text-sm leading-relaxed">
+                Diversidade de linguagens, autonomia criativa, inclusão sociocultural e transparência nas relações profissionais.
               </p>
             </div>
           </div>
 
-          {/* Nossa História */}
-          <div className="mb-20">
-            <h2 className="text-4xl font-bold text-white mb-8 text-center">Nossa História</h2>
-            <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10">
-              <div className="prose prose-invert prose-lg max-w-none">
-                <p className="text-gray-300 text-lg mb-6">
-                  Nascemos em 2020 com um propósito claro: criar uma ponte real entre o talento artístico brasileiro e as oportunidades do mercado. Começamos como um pequeno projeto conectando 10 artistas locais a galerias da região.
+          {/* Nossa História / Manifesto */}
+          <div className="bg-neutral-50 border border-neutral-200 rounded-3xl p-8 sm:p-12 mb-20">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 mb-6">
+                Por Que a AWAW Existe?
+              </h2>
+              <div className="space-y-4 text-neutral-600 text-sm sm:text-base leading-relaxed text-left">
+                <p>
+                  Muitos artistas talentosos enfrentam dificuldades para furar a bolha dos circuitos tradicionais de galerias e alcançar oportunidades no mercado. Ao mesmo tempo, empresas e projetos sociais frequentemente buscam criadores autênticos, mas não possuem um canal direto e estruturado.
                 </p>
-                <p className="text-gray-300 text-lg mb-6">
-                  Hoje, somos uma plataforma nacional que já conectou mais de <span className="text-emerald-400 font-bold">5.000 artistas</span> a <span className="text-purple-400 font-bold">500+ empresas</span>, gerando oportunidades reais de trabalho e crescimento profissional.
-                </p>
-                <p className="text-gray-300 text-lg">
-                  Acreditamos que todo artista merece ser visto, valorizado e remunerado de forma justa pelo seu trabalho. Nossa plataforma não é apenas um diretório - é um ecossistema vivo onde talentos florescem e negócios prosperam através da arte.
+                <p>
+                  A <strong>AWAW</strong> foi desenvolvida para resolver esse gargalo: um ambiente digital unificado onde portfólios visuais encontram demandas reais do mercado e apoio comunitário, valorizando o trabalho autoral de ponta a ponta.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Time */}
+          {/* Seção da Equipe com Cards Padronizados */}
           <div className="mb-20">
-            <h2 className="text-4xl font-bold text-white mb-12 text-center">Nosso Time</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-purple-100 text-purple-700 text-xs font-bold uppercase tracking-wider mb-3">
+                Desenvolvimento & Curadoria
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-neutral-900">
+                Quem Faz Acontecer
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {team.map((member) => (
                 <div
                   key={member.name}
-                  className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-purple-400 transition-all duration-300 hover:scale-105 group text-center"
+                  className="group bg-white rounded-3xl border border-neutral-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-purple-300 transition-all duration-300 flex flex-col"
                 >
-                  <div className="h-64 overflow-hidden">
-             <img
-                      src={member.image} // CORREÇÃO AQUI: src={member.image}
+                  {/* Container da Foto sem distorção */}
+                  <div className="h-64 w-full bg-neutral-100 relative overflow-hidden">
+                    <img
+                      src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        e.currentTarget.src = "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=600"
+                      }}
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
-                    <p className="text-emerald-400 font-semibold mb-3">{member.role}</p>
-                    <p className="text-gray-300">{member.bio}</p>
+
+                  <div className="p-6 flex flex-col justify-between flex-1">
+                    <div>
+                      <h3 className="text-xl font-bold text-neutral-900 mb-1" title={member.name}>
+                        {member.name}
+                      </h3>
+                      <p className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-3">
+                        {member.role}
+                      </p>
+                      <p className="text-neutral-600 text-sm leading-relaxed">
+                        {member.bio}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Estatísticas */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-            <div className="text-center">
-              <div className="text-5xl font-bold text-emerald-400 mb-2">5K+</div>
-              <div className="text-gray-300 text-lg">Artistas Cadastrados</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold text-purple-400 mb-2">500+</div>
-              <div className="text-gray-300 text-lg">Empresas Parceiras</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold text-amber-400 mb-2">10K+</div>
-              <div className="text-gray-300 text-lg">Conexões Realizadas</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold text-pink-400 mb-2">50+</div>
-              <div className="text-gray-300 text-lg">Projetos Sociais</div>
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-8 md:p-12 text-center">
-            <h2 className="text-4xl font-bold text-white mb-6">Faça Parte Dessa História</h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Junte-se a milhares de artistas e empresas que já estão transformando o mercado de arte no Brasil
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/signup?type=artist"
-                className="px-8 py-4 bg-white text-purple-600 font-bold text-lg rounded-xl hover:bg-gray-100 transition-all duration-300"
-              >
-                Sou Artista
-              </a>
-              <a
-                href="/signup?type=company"
-                className="px-8 py-4 bg-emerald-400 text-slate-900 font-bold text-lg rounded-xl hover:bg-emerald-300 transition-all duration-300"
-              >
-                Sou Empresa
-              </a>
-            </div>
-          </div>
         </div>
       </main>
 

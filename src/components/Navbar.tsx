@@ -1,84 +1,81 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Link } from "react-router-dom"
-import { Menu, X } from 'lucide-react'
-import type { User } from '@lumi.new/sdk'
-import { lumi } from '@/lib/lumi'
+import { Menu, X, LayoutDashboard, UserPlus } from "lucide-react"
+import { useAuth } from "@/hooks/useAuth"
 
-// 1. Hook de Autenticação (Lógica)
-export function useAuth() {
-  const [isAuthenticated, setIsAuthenticated] = useState(lumi.auth.isAuthenticated)
-  const [user, setUser] = useState<User | null>(lumi.auth.user)
-
-  useEffect(() => {
-    const unsubscribe = lumi.auth.onAuthChange(({ isAuthenticated, user }) => {
-      setIsAuthenticated(isAuthenticated)
-      setUser(user)
-    })
-    return () => unsubscribe()
-  }, [])
-
-  return {
-    user,
-    isAuthenticated,
-    isAdmin: user?.userRole === 'ADMIN',
-  }
-}
-
-// 2. Componente Visual (Interface)
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { isAuthenticated } = useAuth()
+  const { isAuthenticated, user, logout } = useAuth()
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="text-4xl font-black text-purple-600 hover:text-purple-700 transition-colors">
+            <Link to="/" className="text-3xl font-black text-purple-600 hover:text-purple-700 tracking-tight transition-colors">
               AWAW
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+            <Link to="/" className="text-neutral-700 hover:text-purple-600 font-medium text-sm transition-colors">
               Início
             </Link>
-            <Link to="/artists" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+            <Link to="/artists" className="text-neutral-700 hover:text-purple-600 font-medium text-sm transition-colors">
               Artistas
             </Link>
-            <Link to="/companies" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+            <Link to="/companies" className="text-neutral-700 hover:text-purple-600 font-medium text-sm transition-colors">
               Empresas
             </Link>
-            <Link to="/social-projects" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+            <Link to="/social-projects" className="text-neutral-700 hover:text-purple-600 font-medium text-sm transition-colors">
               Projetos Sociais
             </Link>
-            <Link to="/about" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+            <Link to="/about" className="text-neutral-700 hover:text-purple-600 font-medium text-sm transition-colors">
               Sobre Nós
             </Link>
           </div>
 
-          {/* CTA Button - Muda o texto se estiver logado */}
-          <div className="hidden md:block">
-            <Link 
-              to={isAuthenticated ? "/dashboard" : "/signup?type=artist"}
-              className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 hover:shadow-lg hover:scale-105 transition-all duration-300 inline-block"
-            >
-              {isAuthenticated ? "DASHBOARD" : "COMECE AGORA"}
-            </Link>
+          {/* CTA Button */}
+          <div className="hidden md:flex items-center gap-3">
+            {isAuthenticated ? (
+              <div className="flex items-center gap-3">
+                <Link 
+                  to="/dashboard"
+                  className="px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-sm hover:shadow-md transition-all flex items-center gap-2"
+                >
+                  <LayoutDashboard className="w-3.5 h-3.5" />
+                  Dashboard
+                </Link>
+                <button
+                  onClick={logout}
+                  className="text-xs font-semibold text-neutral-500 hover:text-red-600 transition-colors px-2 py-1"
+                >
+                  Sair
+                </button>
+              </div>
+            ) : (
+              <Link 
+                to="/signup?type=artist"
+                className="px-6 py-2.5 bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-1.5"
+              >
+                <UserPlus className="w-3.5 h-3.5" />
+                Comece Agora
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-xl text-neutral-700 hover:bg-neutral-100 transition-colors"
           >
             {mobileMenuOpen ? (
-              <X className="w-6 h-6 text-gray-700" />
+              <X className="w-6 h-6" />
             ) : (
-              <Menu className="w-6 h-6 text-gray-700" />
+              <Menu className="w-6 h-6" />
             )}
           </button>
         </div>
@@ -86,18 +83,20 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100">
-          <div className="px-4 py-6 space-y-4">
-            <Link to="/artists" className="block text-gray-700 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Artistas</Link>
-            <Link to="/companies" className="block text-gray-700 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Empresas</Link>
-            <Link to="/social-projects" className="block text-gray-700 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Projetos Sociais</Link>
-            <Link to="/about" className="block text-gray-700 font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Sobre Nós</Link>
+        <div className="md:hidden bg-white border-t border-neutral-100 px-6 py-6 space-y-4 shadow-lg">
+          <Link to="/" className="block text-neutral-700 font-medium py-1.5" onClick={() => setMobileMenuOpen(false)}>Início</Link>
+          <Link to="/artists" className="block text-neutral-700 font-medium py-1.5" onClick={() => setMobileMenuOpen(false)}>Artistas</Link>
+          <Link to="/companies" className="block text-neutral-700 font-medium py-1.5" onClick={() => setMobileMenuOpen(false)}>Empresas</Link>
+          <Link to="/social-projects" className="block text-neutral-700 font-medium py-1.5" onClick={() => setMobileMenuOpen(false)}>Projetos Sociais</Link>
+          <Link to="/about" className="block text-neutral-700 font-medium py-1.5" onClick={() => setMobileMenuOpen(false)}>Sobre Nós</Link>
+          
+          <div className="pt-2">
             <Link 
               to={isAuthenticated ? "/dashboard" : "/signup?type=artist"}
-              className="block w-full px-8 py-3 bg-purple-600 text-white font-semibold rounded-full text-center"
+              className="block w-full py-3 bg-purple-600 text-white font-bold text-center text-sm rounded-full"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {isAuthenticated ? "DASHBOARD" : "COMECE AGORA"}
+              {isAuthenticated ? "ACESSAR DASHBOARD" : "COMECE AGORA"}
             </Link>
           </div>
         </div>

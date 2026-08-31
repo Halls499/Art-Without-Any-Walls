@@ -84,24 +84,24 @@ export default function Companies() {
       
       <main className="flex-1 pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Header no estilo da Home */}
+          {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-neutral-900 mb-4">
-              EMPRESAS <span className="text-purple-600">PARCEIRAS.</span>
+              MERCADO & <span className="text-purple-600">POLOS CRIATIVOS.</span>
             </h1>
             <p className="text-base sm:text-lg text-neutral-600 leading-relaxed">
-              Conecte seu portfólio a galerias, produtoras e estúdios que investem ativamente em criadores no Brasil.
+              Conheça as principais referências de galerias, produtoras e estúdios que movimentam a economia criativa no Brasil e representam oportunidades para os criadores da plataforma.
             </p>
           </div>
 
-          {/* Grid de Empresas */}
+          {/* Grid de Empresas / Polos */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {companies.map((company) => (
               <div
                 key={company.id}
                 className="group bg-white rounded-3xl border border-neutral-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-purple-300 transition-all duration-300 flex flex-col"
               >
-                {/* Área da Imagem / Logo Padronizada */}
+                {/* Área da Imagem */}
                 <div className="h-48 w-full bg-neutral-50 border-b border-neutral-100 flex items-center justify-center p-6 relative">
                   <div className="w-full h-full flex items-center justify-center">
                     <img
@@ -159,7 +159,7 @@ export default function Companies() {
           {/* Seção de Vantagens */}
           <div className="bg-neutral-50 border border-neutral-200 rounded-3xl p-8 sm:p-12 mb-16">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 text-center mb-8">
-              Por Que Sua Empresa Deveria Fazer Parte?
+              Por Que Sua Organização Deveria Fazer Parte?
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -169,7 +169,7 @@ export default function Companies() {
                 </div>
                 <h3 className="text-lg font-bold text-neutral-900 mb-1">Base Curada</h3>
                 <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed">
-                  Acesso facilitado a centenas de artistas independentes em diversas modalidades e linguagens.
+                  Acesso facilitado a centenas de artistas independentes em diversas modalidades e linguagens visuais.
                 </p>
               </div>
 
@@ -179,7 +179,7 @@ export default function Companies() {
                 </div>
                 <h3 className="text-lg font-bold text-neutral-900 mb-1">Contratação Direta</h3>
                 <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed">
-                  Publique editais ou contrate sob demanda sem fricção burocrática entre empresa e criador.
+                  Publique editais ou contrate sob demanda sem fricção burocrática entre organização e criador.
                 </p>
               </div>
 
@@ -189,7 +189,7 @@ export default function Companies() {
                 </div>
                 <h3 className="text-lg font-bold text-neutral-900 mb-1">Impacto de Marca</h3>
                 <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed">
-                  Associe sua organização ao fomento da cultura e ao desenvolvimento de jovens talentos.
+                  Associe sua organização ao fomento cultural e ao desenvolvimento sustentável de novos talentos.
                 </p>
               </div>
             </div>
@@ -197,16 +197,16 @@ export default function Companies() {
 
           {/* CTA */}
           <div className="text-center max-w-xl mx-auto">
-            <h3 className="text-2xl font-black text-neutral-900 mb-2">Representa uma organização?</h3>
+            <h3 className="text-2xl font-black text-neutral-900 mb-2">Representa uma organização criativa?</h3>
             <p className="text-neutral-600 text-sm mb-6">
-              Junte-se à plataforma AWAW e conecte sua equipe com novas visões artísticas.
+              Junte-se à plataforma AWAW e conecte sua equipe com novas visões artísticas independentes.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
                 to="/signup?type=business"
                 className="px-6 py-3 bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-semibold text-sm rounded-full shadow-md hover:shadow-lg transition-all"
               >
-                Cadastrar Empresa
+                Cadastrar Organização
               </Link>
               <Link
                 to="/about"

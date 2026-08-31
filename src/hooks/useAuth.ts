@@ -1,22 +1,35 @@
-import type { User } from '@lumi.new/sdk'
-import { lumi } from '@/lib/lumi'
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from "react"
+
+export interface UserProfile {
+  id: string
+  name: string
+  email: string
+  role: "ARTIST" | "COMPANY" | "SOCIAL" | "ADMIN"
+}
 
 export function useAuth() {
-  const [isAuthenticated, setIsAuthenticated] = useState(lumi.auth.isAuthenticated)
-  const [user, setUser] = useState<User | null>(lumi.auth.user)
+  const [user, setUser] = useState<UserProfile | null>(() => {
+    const stored = localStorage.getItem("awaw_user")
+    return stored ? JSON.parse(stored) : null
+  })
 
-  useEffect(() => {
-    const unsubscribe = lumi.auth.onAuthChange(({ isAuthenticated, user }) => {
-      setIsAuthenticated(isAuthenticated)
-      setUser(user)
-    })
-    return () => unsubscribe()
-  }, [])
+  const isAuthenticated = !!user
+
+  const login = (userData: UserProfile) => {
+    localStorage.setItem("awaw_user", JSON.stringify(userData))
+    setUser(userData)
+  }
+
+  const logout = () => {
+    localStorage.removeItem("awaw_user")
+    setUser(null)
+  }
 
   return {
     user,
     isAuthenticated,
-    isAdmin: user?.userRole === 'ADMIN',
+    isAdmin: user?.role === "ADMIN",
+    login,
+    logout
   }
 }
