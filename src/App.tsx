@@ -5,6 +5,7 @@ import Companies from '@/pages/Companies'
 import SocialProjects from '@/pages/SocialProjects'
 import About from '@/pages/About'
 import SignUp from '@/pages/SingUp'
+import Kat from './Katz/Katz'
 import { useRoutes } from 'react-router-dom'
 
 // Used in @/prerender.tsx
@@ -15,6 +16,7 @@ export const routes: RouteObject[] = [
   { path: '/social-projects', element: <SocialProjects /> },
   { path: '/about', element: <About /> },
   { path: '/signup', element: <SignUp /> },
+  { path: '/katz', element: <Kat /> },
 ]
 
 function App() {
